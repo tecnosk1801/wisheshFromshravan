@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:wght@400;700&display=swap");
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.birthdayCard {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: 1s;
+}
+
+.birthdayCard:hover {
+  transform: perspective(2500px) rotate(5deg);
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2), 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.birthdayCard:hover .cardFront {
+  transform: rotateY(-160deg);
+}
+
+.birthdayCard:hover .happy {
+  visibility: hidden;
+}
+
+.cardFront {
+  position: relative;
+  background-color: #fff;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2), 30px 0 50px rgba(0, 0, 0, 0.4);
+  transition: .6s;
+}
+
+.happy {
+  font-family: "Handlee", cursive;
+  text-align: center;
+  margin: 30px;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  transition: .1s;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.name {
+  font-family: "Handlee", cursive;
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  z-index: 1;
+  margin-top: -20px;
+
+}
+
+.balloons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.balloon-1,
+.balloon-2,
+.balloon-3,
+.balloon-4 {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.balloon-1 {
+  background-color: #f39c12;
+  top: 50%;
+  left: 20%;
+}
+.balloon-2 {
+  background-color: #e74c3c;
+  top: 30%;
+  left: 40%;
+}
+.balloon-3 {
+  background-color: #3498db;
+  top: 60%;
+  right: 20%;
+}
+.balloon-4 {
+  background-color: #2ecc71;
+  top: 40%;
+  right: 40%;
+}
+
+.cardInside {
+  position: absolute;
+  background-color: #fff;
+  width: 250px;
+  height: 350px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+
+.cardInside p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 10px 20px;
+}
+
+.cardInside .back {
+  font-family: "Handlee", cursive;
+  color: #333;
+  text-align: center;
+  margin: 30px;
+  outline-color: #333;
+  outline-style: dotted;
+}
+
+.cardInside .name {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 16px;
+  text-align: right;
+}
+
